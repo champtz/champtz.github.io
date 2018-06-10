@@ -7,7 +7,7 @@ body, html {
 }
 
 .bgimg {
-    background-image: url('http://i66.tinypic.com/b7ksk9.png');
+    background-image: url('http://i68.tinypic.com/2zg7kno.jpg');
     height: 100%;
     background-position: center;
     background-size: cover;
@@ -27,6 +27,18 @@ body, html {
     position: absolute;
     bottom: 0;
     left: 16px;
+}
+
+.right {
+	position: absolute;
+	top: 20%;
+	left: 80%
+}
+
+.left {
+	position: absolute;
+	top: 20%;
+	left: 3%;
 }
 
 .middle {
@@ -50,36 +62,36 @@ hr {
   <div class="middle">
     <P>CHAMPTZ</P>
     <h1>COMING SOON</h1>
-    <hr>
-    <p id="demo" style="font-size:30px"></p>
-  </div>
+	<hr>
+	<p id="demo" style="font-size:30px"></p>
+ </div>
   <div class="bottomleft">
     <p>champtz.com</p>
+  </div>
+  <div class="right">
+  	<a class="twitter-timeline" data-width="320" data-height="640" data-dnt="true" data-theme="dark" data-link-color="#19CF86" href="https://twitter.com/CHAMPTZcsgo?ref_src=twsrc%5Etfw">Tweets by CHAMPTZcsgo</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>	
   </div>
 </div>
 
 <script>
 var countDownDate = new Date("July 5, 2018 15:37:25").getTime();
+var x = setInterval(function() {
 
-var countdownfunction = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
 
-    var now = new Date().getTime();
-    
-    var distance = countDownDate - now;
-    
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-    + minutes + "m " + seconds + "s ";
-    
-     If the count down is over, write some text 
-    if (distance < 0) {
-        clearInterval(countdownfunction);
-        document.getElementById("demo").innerHTML = "get ready.";
-   // }
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
 }, 1000);
 </script>
 
