@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html><head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+	opacity = 1;
+  display: block;
+  width: 40%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 40%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #C0C0C0;
+}
+
+.container:hover .overlay {
+  opacity: 0.35;
+}
+
+.text {
+  color: white;
+  font-size: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <img src="https://i.hizliresim.com/b6ldVZ.png" width="160" height="160" alt="Avatar" class="image">
+  <div class="overlay">
+    <div class="text" id="px2"><font size=14></font><b></b></div>
+  </div>
+</div>
+
+<p>Enter some text then press enter to light <b>yourself</b> up.</p>
+
+Enter some text: <input type="text" name="txt" value="Enter here something" onchange="funcName(this.value)">
+
+<script>
+function funcName(val) {
+	document.getElementById("px2").innerHTML = "<b><font color='#000000' size=14>" + val + "</font></b>";
+   //alert("The input value has changed. The new value is: " + val);
+}
+</script>
+
+</body>
+</html>
