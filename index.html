@@ -57,6 +57,9 @@ hr {
     width: 40%;
 }
 </style>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 <body>
 
 <div class="bgimg">
@@ -69,6 +72,7 @@ hr {
 	<p id="demo" style="font-size:30px"></p>
 	<p>(July 25)</p>
 	<a target="_blank"><img src="https://www.reliablecounter.com/count.php?page=champtz.github.io/&digit=style/plain/1/&reloads=0" alt="" title="" border="0"></a><br />
+	<div class="g-signin2" data-onsuccess="onSignIn"></div>
  </div>
   <div class="bottomleft">
     <p>champtz.com</p>
@@ -77,7 +81,7 @@ hr {
   	<a class="twitter-timeline" data-width="320" data-height="640" data-dnt="true" data-theme="dark" data-link-color="#19CF86" href="https://twitter.com/CHAMPTZcsgo?ref_src=twsrc%5Etfw">Tweets by CHAMPTZcsgo</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>	
   </div>
 </div>
-
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 <script>
 var countDownDate = new Date("July 25, 2018 15:37:25").getTime();
 var x = setInterval(function() {
@@ -98,6 +102,15 @@ var x = setInterval(function() {
     document.getElementById("demo").innerHTML = "EXPIRED";
   }
 }, 1000);
+
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
+
 </script>
 
 </body>
