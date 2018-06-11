@@ -45,7 +45,7 @@
 </head>
 <body>
 <div class="container">
-  <img src="https://i.hizliresim.com/b6ldVZ.png" width="160" height="160" alt="Avatar" class="image">
+  <img src="https://i.hizliresim.com/b6ldVZ.png" width="160" height="160" alt="Avatar" class="image" id="imagechange">
   <div class="overlay">
     <div class="text" id="px2"><font size=14></font><b></b></div>
   </div>
@@ -53,13 +53,34 @@
 
 <p>Enter some text then press enter to light <b>yourself</b> up.</p>
 
-Enter some text: <input type="text" name="txt" value="Enter here something" onchange="funcName(this.value)">
+Text: <input type="text" name="txt" value="Enter here something" onchange="funcName(this.value)">
+<p></p>
+ Color (in HEX format) https://www.rgbtohex.net/ << look here for colours: <input type="text" name="txt" value="Enter here something" onchange="bColor(this.value)"> 
+<p></p>
+ Opacity (0 to 1): <input type="text" name="txt" value="Enter here something" onchange="cOpacity(this.value)"> 
+<p></p>
+ Image Source: <input type="text" name="txt" value="Enter here something" onchange="cImage(this.value)"> 
 
 <script>
 function funcName(val) {
 	document.getElementById("px2").innerHTML = "<b><font color='#000000' size=14>" + val + "</font></b>";
    //alert("The input value has changed. The new value is: " + val);
 }
+
+function bColor(val) {
+var bcolor = document.querySelector(".overlay");
+bcolor.style.backgroundColor = "#" + val;
+}
+
+
+function cOpacity(val) {
+var opac = document.querySelector(".overlay");
+opac.style.opacity = val;
+}
+
+	function cImage(val) {
+	document.getElementById("imagechange").src = val;
+} // img	
 </script>
 
 </body>
